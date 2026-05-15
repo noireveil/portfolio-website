@@ -1,0 +1,92 @@
+:root {
+  --cc-bg: #000000;
+  --cc-text: #fdfdfd;
+  --cc-border: #1a1a1a;
+  --cc-muted: #8a8a8a;
+  --mouse-clientX: -100px;
+  --mouse-clientY: -100px;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+html, body {
+  background-color: var(--cc-bg);
+  color: var(--cc-text);
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+}
+
+::selection {
+  background-color: var(--cc-text);
+  color: var(--cc-bg);
+}
+
+::-webkit-scrollbar {
+  display: none;
+}
+
+.hover-word {
+  transition: color 0.3s ease, text-shadow 0.3s ease;
+  display: inline-block;
+}
+
+.hover-word:hover {
+  color: var(--cc-text) !important;
+  text-shadow: 0 0 15px rgba(255, 255, 255, 0.4);
+  /* Efek naik (transform: translateY) telah dihapus sesuai permintaan */
+}
+
+.grid-line-x, .grid-line-y {
+  position: relative;
+  border: none !important;
+}
+
+.grid-line-x::before, .grid-line-x::after,
+.grid-line-y::before, .grid-line-y::after {
+  content: "";
+  position: absolute;
+  pointer-events: none;
+}
+
+.grid-line-x::before { top: 0; left: 0; right: 0; height: 1px; background: var(--cc-border); z-index: 0; }
+.grid-line-y::before { top: 0; bottom: 0; right: 0; width: 1px; background: var(--cc-border); z-index: 0; }
+
+.grid-line-x::after {
+  top: 0; left: 0; right: 0; height: 1px;
+  background-image: radial-gradient(circle 250px at var(--mouse-clientX) var(--mouse-clientY), rgba(255,255,255,0.5), transparent);
+  background-attachment: fixed;
+  z-index: 10;
+}
+
+.grid-line-y::after {
+  top: 0; bottom: 0; right: 0; width: 1px;
+  background-image: radial-gradient(circle 250px at var(--mouse-clientX) var(--mouse-clientY), rgba(255,255,255,0.5), transparent);
+  background-attachment: fixed;
+  z-index: 10;
+}
+
+.marquee-container {
+  display: flex;
+  width: 100%;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+.marquee-track {
+  display: flex;
+  flex-shrink: 0;
+  min-width: 100%;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.cascade-img {
+  will-change: transform;
+}
+
+.scramble-target {
+  display: inline-block;
+  min-width: 10px;
+}
