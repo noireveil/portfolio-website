@@ -4,23 +4,39 @@
       <span class="font-serif italic text-6xl md:text-[8rem] font-light text-cc-border tracking-tighter reveal-text text-highlight word-hover-target">(02)</span>
     </div>
     <div class="md:col-span-9 p-6 md:p-12 md:py-32 flex flex-col justify-center">
-      <h2 class="font-serif italic text-4xl md:text-7xl lg:text-[6rem] font-light tracking-tighter leading-[0.9] mb-12 text-cc-muted reveal-text cursor-default inline-block">
-        <span class="scramble-target scramble-scroll text-highlight word-hover-target block" data-text="The engine room.">The engine room.</span>
-        <span class="text-cc-text font-sans not-italic font-medium text-2xl md:text-3xl tracking-tight block mt-8 md:ml-16 word-hover-target">
-          Core technologies driving scalable solutions.
-        </span>
-      </h2>
 
-      <div class="grid-line-x w-full h-[1px] mt-8 mb-12"></div>
+      <div class="w-full" @mousemove="updateMainMouse" @mouseleave="leaveMainMouse">
+        <h2 class="font-serif italic text-4xl md:text-7xl lg:text-[6rem] font-light tracking-tighter leading-[0.9] mb-12 text-cc-muted reveal-text cursor-default inline-block">
+          <span class="scramble-target scramble-scroll text-highlight word-hover-target block" data-text="Structural integrity.">Structural integrity.</span>
+          <span class="text-cc-text font-sans not-italic font-medium text-2xl md:text-3xl tracking-tight block mt-8 md:ml-16 word-hover-target">
+            Tools selected for purpose, not trend.
+          </span>
+        </h2>
+
+        <div class="grid-line-x w-full h-[1px] mt-8 mb-12 relative">
+          <div class="absolute inset-0 pointer-events-none transition-opacity duration-300"
+               :class="isMainHovered ? 'opacity-100' : 'opacity-0'"
+               :style="{ background: `radial-gradient(circle 250px at ${mainMouseX}px 50%, rgba(255, 255, 255, 0.15), transparent)` }">
+          </div>
+        </div>
+      </div>
 
       <div class="flex flex-col gap-12 md:ml-16">
-        <div v-for="(category, catIndex) in techCategories" :key="catIndex" class="reveal-text w-full">
+        <div v-for="(category, catIndex) in techCategories" :key="catIndex"
+             class="reveal-text w-full"
+             @mousemove="updateCategoryMouse($event, catIndex)"
+             @mouseleave="leaveCategoryMouse(catIndex)">
 
           <h3 class="text-cc-muted text-sm uppercase tracking-widest cursor-default word-hover-target block">
             {{ category.title }}
           </h3>
 
-          <div class="grid-line-x w-full h-[1px] mt-4 mb-8"></div>
+          <div class="grid-line-x w-full h-[1px] mt-4 mb-8 relative">
+            <div class="absolute inset-0 pointer-events-none transition-opacity duration-300"
+                 :class="hoveredCategory === catIndex ? 'opacity-100' : 'opacity-0'"
+                 :style="{ background: `radial-gradient(circle 250px at ${categoryMouseX[catIndex]}px 50%, rgba(255, 255, 255, 0.15), transparent)` }">
+            </div>
+          </div>
 
           <div class="flex flex-wrap gap-4">
             <div v-for="(tech, index) in category.items" :key="index"
@@ -44,6 +60,24 @@
 </template>
 
 <script setup lang="ts">
+import { ref } from 'vue'
+
+const mainMouseX = ref(0)
+const isMainHovered = ref(false)
+
+const updateMainMouse = (e: MouseEvent) => {
+  isMainHovered.value = true
+  const target = e.currentTarget as HTMLElement
+  if (target) {
+    const rect = target.getBoundingClientRect()
+    mainMouseX.value = e.clientX - rect.left
+  }
+}
+
+const leaveMainMouse = () => {
+  isMainHovered.value = false
+}
+
 const techCategories = [
   {
     title: 'Core Languages',
@@ -53,12 +87,13 @@ const techCategories = [
     ]
   },
   {
-    title: 'Frameworks & Libraries (Current Explorations)',
+    title: 'FFrameworks & Libraries (Current Explorations)',
     items: [
+      { name: 'Vue', icon: 'vuedotjs', color: '#4FC08D' },
       { name: 'Next.js', icon: 'nextdotjs', color: '#FFFFFF' },
       { name: 'Nuxt', icon: 'nuxt', color: '#00DC82' },
       { name: 'NestJS', icon: 'nestjs', color: '#E0234E' },
-      { name: 'Gin', icon: 'go', color: '#00ADD8' },
+      { name: 'Gin', icon: 'gin', color: '#00ADD8' },
       { name: 'React Native', icon: 'react', color: '#61DAFB' },
       { name: 'Electron', icon: 'electron', color: '#9FEAF9' }
     ]
@@ -80,6 +115,24 @@ const techCategories = [
     ]
   }
 ]
+
+const categoryMouseX = ref<number[]>(techCategories.map(() => 0))
+const hoveredCategory = ref<number | null>(null)
+
+const updateCategoryMouse = (e: MouseEvent, index: number) => {
+  hoveredCategory.value = index
+  const target = e.currentTarget as HTMLElement
+  if (target) {
+    const rect = target.getBoundingClientRect()
+    categoryMouseX.value[index] = e.clientX - rect.left
+  }
+}
+
+const leaveCategoryMouse = (index: number) => {
+  if (hoveredCategory.value === index) {
+    hoveredCategory.value = null
+  }
+}
 </script>
 
 <style scoped>

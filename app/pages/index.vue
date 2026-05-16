@@ -99,43 +99,43 @@
 
       <div class="hero-gallery absolute inset-0 pointer-events-none z-0">
          <div class="cascade-img absolute top-[27%] right-[20%] w-72 md:w-[22rem] aspect-[4/3] bg-[#1a1a1a] border border-cc-border shadow-2xl overflow-hidden rounded-md rotate-[2deg] z-0">
-            <img src="~/assets/images/hero/image2.jpeg" class="w-full h-full object-cover opacity-[0.40]" alt="Gallery 2" />
+            <NuxtImg src="/images/hero/image2.jpeg" format="webp" loading="lazy" class="w-full h-full object-cover opacity-[0.40]" alt="Gallery 2" />
          </div>
          <div class="cascade-img absolute top-[12%] right-[38%] w-44 md:w-52 aspect-[3/4] bg-[#111] border border-cc-border shadow-2xl overflow-hidden rounded-md rotate-[-12deg] z-10">
-            <img src="~/assets/images/hero/image1.jpeg" class="w-full h-full object-cover opacity-[0.40]" alt="Gallery 1" />
+            <NuxtImg src="/images/hero/image1.jpeg" format="webp" loading="lazy" class="w-full h-full object-cover opacity-[0.40]" alt="Gallery 1" />
          </div>
          <div class="cascade-img absolute top-[10%] right-[8%] w-40 md:w-48 aspect-square bg-[#1a1a1a] border border-cc-border shadow-2xl overflow-hidden rounded-md rotate-[18deg] z-10">
-            <img src="~/assets/images/hero/image10.jpeg" class="w-full h-full object-cover opacity-[0.40]" alt="Gallery 10" />
+            <NuxtImg src="/images/hero/image10.jpeg" format="webp" loading="lazy" class="w-full h-full object-cover opacity-[0.40]" alt="Gallery 10" />
          </div>
          <div class="cascade-img absolute top-[62%] right-[38%] w-48 md:w-56 aspect-[3/4] bg-[#0a0a0a] border border-cc-border shadow-2xl overflow-hidden rounded-md rotate-[-15deg] z-10">
-            <img src="~/assets/images/hero/image3.jpeg" class="w-full h-full object-cover opacity-[0.40]" alt="Gallery 3" />
+            <NuxtImg src="/images/hero/image3.jpeg" format="webp" loading="lazy" class="w-full h-full object-cover opacity-[0.40]" alt="Gallery 3" />
          </div>
          <div class="cascade-img absolute top-[62%] right-[5%] w-44 md:w-52 aspect-[3/4] bg-[#1f1f1f] border border-cc-border shadow-2xl overflow-hidden rounded-md rotate-[20deg] z-10">
-            <img src="~/assets/images/hero/image6.jpeg" class="w-full h-full object-cover opacity-[0.40]" alt="Gallery 6" />
+            <NuxtImg src="/images/hero/image6.jpeg" format="webp" loading="lazy" class="w-full h-full object-cover opacity-[0.40]" alt="Gallery 6" />
          </div>
          <div class="cascade-img absolute top-[30%] right-[44%] w-44 md:w-52 aspect-[3/4] bg-[#1a1a1a] border border-cc-border shadow-2xl overflow-hidden rounded-md rotate-[-6deg] z-20">
-            <img src="~/assets/images/hero/image13.jpeg" class="w-full h-full object-cover opacity-[0.40]" alt="Gallery 13" />
+            <NuxtImg src="/images/hero/image13.jpeg" format="webp" loading="lazy" class="w-full h-full object-cover opacity-[0.40]" alt="Gallery 13" />
          </div>
          <div class="cascade-img absolute top-[28%] right-[3%] w-44 md:w-52 aspect-[3/4] bg-[#141414] border border-cc-border shadow-2xl overflow-hidden rounded-md rotate-[12deg] z-20">
-            <img src="~/assets/images/hero/image4.jpeg" class="w-full h-full object-cover opacity-[0.40]" alt="Gallery 4" />
+            <NuxtImg src="/images/hero/image4.jpeg" format="webp" loading="lazy" class="w-full h-full object-cover opacity-[0.40]" alt="Gallery 4" />
          </div>
          <div class="cascade-img absolute top-[5%] right-[22%] w-40 md:w-48 aspect-square bg-[#1a1a1a] border border-cc-border shadow-2xl overflow-hidden rounded-md rotate-[5deg] z-20">
-            <img src="~/assets/images/hero/image12.jpeg" class="w-full h-full object-cover opacity-[0.40]" alt="Gallery 12" />
+            <NuxtImg src="/images/hero/image12.jpeg" format="webp" loading="lazy" class="w-full h-full object-cover opacity-[0.40]" alt="Gallery 12" />
          </div>
          <div class="cascade-img absolute top-[58%] right-[22%] w-48 md:w-56 aspect-[3/4] bg-[#1f1f1f] border border-cc-border shadow-2xl overflow-hidden rounded-md rotate-[-5deg] z-20">
-            <img src="~/assets/images/hero/image7.jpeg" class="w-full h-full object-cover opacity-[0.40]" alt="Gallery 7" />
+            <NuxtImg src="/images/hero/image7.jpeg" format="webp" loading="lazy" class="w-full h-full object-cover opacity-[0.40]" alt="Gallery 7" />
          </div>
          <div class="cascade-img absolute top-[20%] right-[30%] w-40 md:w-48 aspect-square bg-[#111] border border-cc-border shadow-2xl overflow-hidden rounded-md rotate-[10deg] z-30">
-            <img src="~/assets/images/hero/image11.jpeg" class="w-full h-full object-cover opacity-[0.40]" alt="Gallery 11" />
+            <NuxtImg src="/images/hero/image11.jpeg" format="webp" loading="lazy" class="w-full h-full object-cover opacity-[0.40]" alt="Gallery 11" />
          </div>
          <div class="cascade-img absolute top-[25%] right-[12%] w-40 md:w-48 aspect-square bg-[#1f1f1f] border border-cc-border shadow-2xl overflow-hidden rounded-md rotate-[-12deg] z-30">
-            <img src="~/assets/images/hero/image8.jpeg" class="w-full h-full object-cover opacity-[0.40]" alt="Gallery 8" />
+            <NuxtImg src="/images/hero/image8.jpeg" format="webp" loading="lazy" class="w-full h-full object-cover opacity-[0.40]" alt="Gallery 8" />
          </div>
          <div class="cascade-img absolute top-[48%] right-[32%] w-48 md:w-56 aspect-square bg-[#1f1f1f] border border-cc-border shadow-2xl overflow-hidden rounded-md rotate-[-6deg] z-40">
-            <img src="~/assets/images/hero/image5.jpeg" class="w-full h-full object-cover opacity-[0.40]" alt="Gallery 5" />
+            <NuxtImg src="/images/hero/image5.jpeg" format="webp" loading="lazy" class="w-full h-full object-cover opacity-[0.40]" alt="Gallery 5" />
          </div>
          <div class="cascade-img absolute top-[50%] right-[12%] w-48 md:w-56 aspect-square bg-[#0a0a0a] border border-cc-border shadow-2xl overflow-hidden rounded-md z-40">
-            <img src="~/assets/images/hero/image9.jpeg" class="w-full h-full object-cover opacity-[0.40]" alt="Gallery 9" />
+            <NuxtImg src="/images/hero/image9.jpeg" format="webp" loading="lazy" class="w-full h-full object-cover opacity-[0.40]" alt="Gallery 9" />
          </div>
       </div>
 
@@ -169,7 +169,7 @@
       </div>
     </section>
 
-    <section class="py-12 grid-line-x bg-cc-bg z-20 relative overflow-hidden">
+    <section class="py-12 grid-line-x overflow-hidden bg-cc-bg z-20 relative">
        <div class="marquee-container flex items-center">
           <div class="marquee-track flex items-center pr-16 gap-16 text-xl md:text-2xl font-medium tracking-widest uppercase text-cc-muted opacity-80 word-hover-target whitespace-nowrap">
              <template v-for="tech in techStack" :key="tech.name">
